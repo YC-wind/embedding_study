@@ -12,11 +12,6 @@ from sklearn.metrics.pairwise import cosine_similarity
 embedding_path = "./tencent_45000.txt"
 # embedding_path = "./word2vec.bin"
 
-"""
-新增 二进制文件格式的， embedding 文件
-之前不好主要受词性的影响，jieba分词有的 会动作 i、j、l 常用语、成语、简称词性。2、现在较稳定
-"""
-
 try:
     model = KeyedVectors.load_word2vec_format(embedding_path, binary=False, unicode_errors='ignore')
     print("use txt")
@@ -114,13 +109,6 @@ if __name__ == "__main__":
     print("most similar words:{}".format(model.most_similar("你好")))
     sentence = "今天天气不错啊"
     sentence_e = get_sentence_embedding(sentence)
-    # print(sentence_e)
-    # res = sentence_e.tolist()
-    # import json
-    #
-    # c = json.dumps(res)
-    # print("res:", c)
-    # d = json.loads(c)
     #
     # e = cosine_similarity(X=[d], Y=[d, d])
     # print("e::::", e)

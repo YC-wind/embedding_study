@@ -1,0 +1,6 @@
+# Created by .ignore support plugin (hsz.mobi)
+.DS_Store
+.idea/
+__pacache__/*
+*/__pacache__/*
+.idea
